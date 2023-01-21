@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.interpolate import lagrange
 
-# Se carga la base de datos del repositorio
+# Se carga la base de datos del repositorio archivo base actualizado
 ruta="https://github.com/ccquinteror/MSprogramacion/blob/main/data.xlsx?raw=true"
 data=pd.read_excel(ruta)
 
