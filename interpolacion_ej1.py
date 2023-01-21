@@ -16,32 +16,28 @@ print(data.head(3))
 col_data=data.columns[1:]
 xi=np.array(data['beta'])
 
+muestras = 100 # Número cualquiera
+a = np.min(xi)
+b = np.max(xi)
+p_xi = np.linspace(a,b,muestras)
+
 # Defino el valor de xi para el que quiero encontrar los demás parámetros
 v_beta=55
 
 res=[v_beta]
 
 
-
 # Se crean las funciones de lagrange mediante un ciclo
 for i in col_data:
-    #print(i)
     fi=np.array(data[i]) # el vector fi toma los valores de cada columna
     poly=lagrange(xi,fi) # realiza la interpolación de lagrange
-    #print(poly(v_beta))
     res.append(round(poly(v_beta),5)) # evalúa el valor v_beta en la función
-    fig, axes=plt.subplots(1,1) 
-    axes.plot(xi,fi, 'o') # Crea el gráfico de los puntos
-    axes.set_title(i) # Define el nombre del gráfico
+    plt.plot(xi,fi, 'o') # Crea el gráfico de los puntos
     # Dibuja una línea de la función de regresión de lagrange
-    muestras = 100 # Número cualquiera
-    a = np.min(xi)
-    b = np.max(xi)
-    p_xi = np.linspace(a,b,muestras)
     pfi = poly(p_xi)
     plt.plot(p_xi,pfi)
-
-    
+    plt.title(i) # Define el nombre del gráfico
+    plt.show()
 
 # Obtengo los vectores de variables y valores para el punto deseado (v_beta)
 res_t=np.transpose(res)
