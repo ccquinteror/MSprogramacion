@@ -1,18 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar  2 19:09:54 2023
-
-@author: Asus
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
-#%%
 
 caudal=pd.read_excel('dt_caudal.xlsx')
-#%%
+
 def sum_riemann(xi,xf,f,n):
     A=0
     xbar=[f['hora'].index[xi]]
@@ -40,7 +31,6 @@ def sum_riemann(xi,xf,f,n):
        
     return(A, xbar, ybar)
 
-#%%
 xi=50
 xf=100
 n=6
@@ -51,6 +41,8 @@ plt.plot(xbar,ybar, linestyle='--', color='r', linewidth=1, label='Aprox. Rieman
 plt.legend()
 plt.xlabel('x10 minutos')
 plt.ylabel('Caudal (l/s)')
+plt.show()
+
 print(A)
 
 
