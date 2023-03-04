@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -44,6 +45,3 @@ plt.ylabel('Caudal (l/s)')
 plt.show()
 
 print(A)
-
-
-
