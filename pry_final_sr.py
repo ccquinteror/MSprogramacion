@@ -11,14 +11,7 @@ import seaborn as sns
 import pandas as pd
 #%%
 
-caudal=pd.read_excel('Proyecto_final/dt_caudal.xlsx')
-
-#%%
-
-sns.lineplot(data=caudal, x='hora', y='caudal')
-xlabel='tiempo'
-ylabel='Caudal'
-
+caudal=pd.read_excel('dt_caudal.xlsx')
 #%%
 def sum_riemann(xi,xf,f,n):
     A=0
